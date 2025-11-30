@@ -127,6 +127,104 @@
             border-radius: 2px;
         }
         
+        .about-section {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .instructor-photo {
+            text-align: center;
+        }
+        
+        .instructor-photo img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2d8659;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instructor-photo .placeholder {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2d8659 0%, #1a5f3f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: #ffd700;
+            margin: 0 auto;
+            border: 5px solid #2d8659;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .about-text h3 {
+            color: #1a5f3f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .video-section {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #000;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, #2d8659 0%, #1a5f3f 100%);
+            padding: 4rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+        }
+        
+        .video-placeholder h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+        
         .courses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -252,8 +350,71 @@
             color: #ffd700;
         }
         
-        .testimonials-section {
+        .faq-section {
             background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: #2d8659;
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #1a5f3f;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .faq-question.active::after {
+            content: '−';
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            padding: 1.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .testimonials-section {
+            background: white;
             padding: 4rem 2rem;
         }
         
@@ -266,7 +427,7 @@
         }
         
         .testimonial-card {
-            background: white;
+            background: #f8f9fa;
             padding: 2rem;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -302,7 +463,7 @@
         }
         
         .contact-section {
-            background: white;
+            background: #f8f9fa;
             padding: 4rem 2rem;
         }
         
@@ -314,6 +475,10 @@
         .contact-form {
             display: grid;
             gap: 1.5rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .form-group {
@@ -365,6 +530,30 @@
             background: #1a5f3f;
         }
         
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+            z-index: 999;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
         .footer {
             background: #1a5f3f;
             color: white;
@@ -405,6 +594,15 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
         }
     </style>
 </head>
@@ -414,8 +612,11 @@
             <div class="logo">🕌 Online Quran Academy</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#video">Video</a></li>
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -426,6 +627,37 @@
         <h1>Welcome to Online Quran Academy</h1>
         <p>Learn Quran, Tajweed, Arabic & Islamic Studies from the comfort of your home with expert teacher Abdul Azeem</p>
         <a href="#contact" class="cta-button">Start Your Journey Today</a>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="instructor-photo">
+                <!-- Replace the src below with your actual photo URL -->
+                <!-- <img src="YOUR_PHOTO_URL_HERE" alt="Abdul Azeem"> -->
+                <div class="placeholder">👨‍🏫</div>
+            </div>
+            <div class="about-text">
+                <h3>Meet Your Instructor: Abdul Azeem</h3>
+                <p>Assalamu Alaikum! I'm Abdul Azeem, a dedicated Quran teacher with years of experience in teaching students of all ages and backgrounds.</p>
+                <p>My mission is to help you connect with the Holy Quran through proper recitation, understanding, and memorization. Whether you're a beginner or looking to perfect your Tajweed, I'm here to guide you every step of the way.</p>
+                <p>Join me on this blessed journey of learning and spiritual growth!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="video-section">
+        <h2 class="section-title">Introduction Video</h2>
+        <div class="video-container">
+            <!-- Replace the placeholder with your actual YouTube video embed code -->
+            <!-- Example: <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe></div> -->
+            <div class="video-placeholder">
+                <div>
+                    <h3>📹 Add Your Introduction Video Here</h3>
+                    <p>Upload a video to YouTube and replace this section with your embed code</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Show potential students your teaching style and introduce yourself!</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="courses" class="container">
@@ -474,7 +706,7 @@
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>Basic Plan</h3>
-                <div class="price">$50<span class="price-period">/month</span></div>
+                <div class="price">$40<span class="price-period">/month</span></div>
                 <ul class="features-list">
                     <li>2 Classes per week</li>
                     <li>30-minute sessions</li>
@@ -501,7 +733,7 @@
             
             <div class="pricing-card">
                 <h3>Premium Plan</h3>
-                <div class="price">$150<span class="price-period">/month</span></div>
+                <div class="price">$120<span class="price-period">/month</span></div>
                 <ul class="features-list">
                     <li>5 Classes per week</li>
                     <li>60-minute sessions</li>
@@ -512,6 +744,67 @@
                     <li>Weekend classes available</li>
                 </ul>
                 <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What age groups do you teach?</div>
+                <div class="faq-answer">
+                    <p>I teach students of all ages - from young children (5+) to adults. My teaching methodology is adapted to suit each age group's learning style and pace.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do I need any prior knowledge to start?</div>
+                <div class="faq-answer">
+                    <p>No prior knowledge is required! Whether you're a complete beginner or have some experience, I'll assess your level and create a personalized learning plan for you.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What platform do you use for online classes?</div>
+                <div class="faq-answer">
+                    <p>Classes are conducted via Zoom, Google Meet, or Skype - whichever platform you're most comfortable with. All you need is a stable internet connection and a device with a camera and microphone.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I reschedule or cancel a class?</div>
+                <div class="faq-answer">
+                    <p>Yes! I understand life can be unpredictable. You can reschedule classes with at least 24 hours notice. We'll find a suitable alternative time that works for both of us.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long does it take to learn to read Quran?</div>
+                <div class="faq-answer">
+                    <p>The timeline varies for each student depending on their dedication and practice. On average, with consistent effort, most students can read basic Quran within 3-6 months. Mastering Tajweed takes additional time.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you provide study materials?</div>
+                <div class="faq-answer">
+                    <p>Yes! Standard and Premium plan students receive digital study materials including PDFs, practice sheets, and audio recordings. I also recommend specific books and resources based on your learning goals.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-answer">
+                    <p>I accept payments via bank transfer, PayPal, and other secure online payment methods. Payment is typically made at the beginning of each month.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I try a free trial class?</div>
+                <div class="faq-answer">
+                    <p>Absolutely! I offer a free 20-minute trial class so you can experience my teaching style and we can discuss your learning goals. Contact me to schedule your trial!</p>
+                </div>
             </div>
         </div>
     </section>
@@ -554,8 +847,8 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+92-XXX-XXXXXXX">
                 </div>
                 
                 <div class="form-group">
@@ -581,14 +874,20 @@
         </div>
     </section>
 
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923065015322" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        💬
+    </a>
+
     <footer class="footer">
         <p><strong>Online Quran Academy</strong></p>
         <p>Instructor: Abdul Azeem</p>
+        <p>WhatsApp: +92-306-5015322</p>
         <p>Email: abdulazeem325566@gmail.com</p>
         <p>&copy; 2025 Online Quran Academy. All rights reserved.</p>
         <div class="social-links">
-            <a href="#" title="WhatsApp">📱</a>
-            <a href="#" title="Email">✉️</a>
+            <a href="https://wa.me/923065015322" target="_blank" title="WhatsApp">📱</a>
+            <a href="mailto:abdulazeem325566@gmail.com" title="Email">✉️</a>
         </div>
     </footer>
 
@@ -603,6 +902,24 @@
                         behavior: 'smooth',
                         block: 'start'
                     });
+                }
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+                
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    this.classList.add('active');
+                    answer.classList.add('active');
                 }
             });
         });
