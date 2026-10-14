@@ -1,7 +1,6 @@
 ```
-GitHub Actions: har push par Muslim Kids app ki release AAB banata hai.
-Koi laptop/Flutter install ki zaroorat nahi — cloud mein build hota hai.
-name: Build Release AAB
+GitHub Actions: 
+name: Build Release AAP
 
 on:
   push:
@@ -29,6 +28,5 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: muslim-kids-aab
-          path: muslim-kids-app/build/app/outputs/bundle/release/app-release.aab
-```
+          name: muslim-kids-aap
+          path: muslim-kids-app/build/app/outputs/bundle/release/app-release
