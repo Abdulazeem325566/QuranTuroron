@@ -1,14 +1,20 @@
-# GitHub Actions: har push par release AAB banata hai.
+# GitHub Actions: har push par Muslim Kids app ki release AAB banata hai.
 # Koi laptop/Flutter install ki zaroorat nahi — cloud mein build hota hai.
 name: Build Release AAB
 
 on:
   push:
     branches: [main]
+    paths:
+      - 'muslim-kids-app/**'
+      - '.github/workflows/build_aab.yml'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: muslim-kids-app
     steps:
       - uses: actions/checkout@v4
 
@@ -18,12 +24,12 @@ jobs:
 
       - run: flutter pub get
 
-      # NOTE: Pehli CI build debug-signing se hogi (app/build.gradle mein set hai)
-      # taake build green ho. Play Store par upload se PEHLE apna upload-keystore
-      # banayein (README dekhein) aur signingConfig badal dein.
+      # NOTE: Pehli build se pehle android/key.properties + upload keystore
+      # banana hoga (muslim-kids-app/README.md dekhein). Uske baghair
+      # AAB sign nahi hogi.
       - run: flutter build appbundle --release
 
       - uses: actions/upload-artifact@v4
         with:
           name: muslim-kids-aab
-          path: build/app/outputs/bundle/release/app-release.aab
+          path: muslim-kids-app/build/app/outputs/bundle/release/app-release.aab
