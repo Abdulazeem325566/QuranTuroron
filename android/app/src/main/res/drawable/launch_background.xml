@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Launch splash screen: app ke brand green rang par safaid parda.
+     (Koi image asset nahi chahiye — Flutter UI foran load ho jata hai.) -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@android:color/white" />
+</layer-list>

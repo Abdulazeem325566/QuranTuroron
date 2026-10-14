@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Debug build ke liye: Flutter tool automatically INTERNET permission lagata hai,
+         AdMob test ads ke liye bhi zaroori hai. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+</manifest>

@@ -1,0 +1,10 @@
+# Flutter/Dart
+.dart_tool/
+.idea/
+build/
+*.iml
+
+# Signing keys — KABHI GitHub par na dalein!
+*.jks
+*.keystore
+android/key.properties
