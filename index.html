@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quran Academy - Learn Quran Online with Expert Teachers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a5f3f 0%, #2d8659 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a5f3f 0%, #2d8659 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background: #ffd700;
+            color: #1a5f3f;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a5f3f;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 2px;
+        }
+        
+        .about-section {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .instructor-photo {
+            text-align: center;
+        }
+        
+        .instructor-photo img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2d8659;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .instructor-photo .placeholder {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2d8659 0%, #1a5f3f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: #ffd700;
+            margin: 0 auto;
+            border: 5px solid #2d8659;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .about-text h3 {
+            color: #1a5f3f;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .video-section {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #000;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, #2d8659 0%, #1a5f3f 100%);
+            padding: 4rem;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+        }
+        
+        .video-placeholder h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .course-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #2d8659;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .course-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-card h3 {
+            color: #1a5f3f;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .course-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-section {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 2px solid #e9ecef;
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.05);
+            border-color: #2d8659;
+        }
+        
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #2d8659 0%, #1a5f3f 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1a5f3f;
+        }
+        
+        .pricing-card.featured h3 {
+            color: #ffd700;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0;
+            color: #2d8659;
+        }
+        
+        .pricing-card.featured .price {
+            color: #ffd700;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .pricing-card.featured .price-period {
+            color: #e9ecef;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2d8659;
+            font-weight: bold;
+        }
+        
+        .pricing-card.featured .features-list li::before {
+            color: #ffd700;
+        }
+        
+        .faq-section {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            background: #2d8659;
+            color: white;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #1a5f3f;
+        }
+        
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .faq-question.active::after {
+            content: '−';
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            padding: 1.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .testimonials-section {
+            background: white;
+            padding: 4rem 2rem;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            font-size: 4rem;
+            color: #2d8659;
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1a5f3f;
+        }
+        
+        .rating {
+            color: #ffd700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-section {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 0.5rem;
+            color: #1a5f3f;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2d8659;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            background: #2d8659;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-button:hover {
+            background: #1a5f3f;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+            z-index: 999;
+            text-decoration: none;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        .footer {
+            background: #1a5f3f;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">🕌 Online Quran Academy</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Online Quran Academy</h1>
+        <p>Learn Quran, Tajweed, Arabic & Islamic Studies from the comfort of your home with expert teacher Abdul Azeem</p>
+        <a href="#contact" class="cta-button">Start Your Journey Today</a>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="instructor-photo">
+                <!-- Replace the src below with your actual photo URL -->
+                <!-- <img src="YOUR_PHOTO_URL_HERE" alt="Abdul Azeem"> -->
+                <div class="placeholder">👨‍🏫</div>
+            </div>
+            <div class="about-text">
+                <h3>Meet Your Instructor: Abdul Azeem</h3>
+                <p>Assalamu Alaikum! I'm Abdul Azeem, a dedicated Quran teacher with years of experience in teaching students of all ages and backgrounds.</p>
+                <p>My mission is to help you connect with the Holy Quran through proper recitation, understanding, and memorization. Whether you're a beginner or looking to perfect your Tajweed, I'm here to guide you every step of the way.</p>
+                <p>Join me on this blessed journey of learning and spiritual growth!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="video-section">
+        <h2 class="section-title">Introduction Video</h2>
+        <div class="video-container">
+            <!-- Replace the placeholder with your actual YouTube video embed code -->
+            <!-- Example: <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe></div> -->
+            <div class="video-placeholder">
+                <div>
+                    <h3>📹 Add Your Introduction Video Here</h3>
+                    <p>Upload a video to YouTube and replace this section with your embed code</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem;">Show potential students your teaching style and introduce yourself!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="container">
+        <h2 class="section-title">Our Courses</h2>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-icon">📖</div>
+                <h3>Quran Reading</h3>
+                <p>Learn to read the Holy Quran with proper pronunciation and fluency. Perfect for beginners and those wanting to improve their recitation.</p>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">🎵</div>
+                <h3>Tajweed</h3>
+                <p>Master the rules of Tajweed to recite the Quran beautifully and correctly. Learn proper articulation points and recitation rules.</p>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">🧠</div>
+                <h3>Quran Memorization</h3>
+                <p>Structured Hifz program with proven techniques to help you memorize the Holy Quran effectively and retain it long-term.</p>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">💡</div>
+                <h3>Quran Translation</h3>
+                <p>Understand the meanings and wisdom of the Quran through detailed translation and Tafseer lessons.</p>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">🔤</div>
+                <h3>Arabic Language</h3>
+                <p>Learn classical Arabic to understand the Quran in its original language. From basics to advanced grammar.</p>
+            </div>
+            
+            <div class="course-card">
+                <div class="course-icon">☪️</div>
+                <h3>Islamic Studies</h3>
+                <p>Comprehensive Islamic education covering Fiqh, Hadith, Seerah, and essential Islamic knowledge for daily life.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <h2 class="section-title">Flexible Pricing Plans</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Basic Plan</h3>
+                <div class="price">$40<span class="price-period">/month</span></div>
+                <ul class="features-list">
+                    <li>2 Classes per week</li>
+                    <li>30-minute sessions</li>
+                    <li>One-on-one teaching</li>
+                    <li>Progress reports</li>
+                    <li>Flexible scheduling</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+            
+            <div class="pricing-card featured">
+                <h3>Standard Plan</h3>
+                <div class="price">$90<span class="price-period">/month</span></div>
+                <ul class="features-list">
+                    <li>3 Classes per week</li>
+                    <li>45-minute sessions</li>
+                    <li>One-on-one teaching</li>
+                    <li>Progress reports</li>
+                    <li>Flexible scheduling</li>
+                    <li>Study materials included</li>
+                </ul>
+                <a href="#contact" class="cta-button">Most Popular</a>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Premium Plan</h3>
+                <div class="price">$120<span class="price-period">/month</span></div>
+                <ul class="features-list">
+                    <li>5 Classes per week</li>
+                    <li>60-minute sessions</li>
+                    <li>One-on-one teaching</li>
+                    <li>Progress reports</li>
+                    <li>Flexible scheduling</li>
+                    <li>Study materials included</li>
+                    <li>Weekend classes available</li>
+                </ul>
+                <a href="#contact" class="cta-button">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What age groups do you teach?</div>
+                <div class="faq-answer">
+                    <p>I teach students of all ages - from young children (5+) to adults. My teaching methodology is adapted to suit each age group's learning style and pace.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do I need any prior knowledge to start?</div>
+                <div class="faq-answer">
+                    <p>No prior knowledge is required! Whether you're a complete beginner or have some experience, I'll assess your level and create a personalized learning plan for you.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What platform do you use for online classes?</div>
+                <div class="faq-answer">
+                    <p>Classes are conducted via Zoom, Google Meet, or Skype - whichever platform you're most comfortable with. All you need is a stable internet connection and a device with a camera and microphone.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I reschedule or cancel a class?</div>
+                <div class="faq-answer">
+                    <p>Yes! I understand life can be unpredictable. You can reschedule classes with at least 24 hours notice. We'll find a suitable alternative time that works for both of us.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How long does it take to learn to read Quran?</div>
+                <div class="faq-answer">
+                    <p>The timeline varies for each student depending on their dedication and practice. On average, with consistent effort, most students can read basic Quran within 3-6 months. Mastering Tajweed takes additional time.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you provide study materials?</div>
+                <div class="faq-answer">
+                    <p>Yes! Standard and Premium plan students receive digital study materials including PDFs, practice sheets, and audio recordings. I also recommend specific books and resources based on your learning goals.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-answer">
+                    <p>I accept payments via bank transfer, PayPal, and other secure online payment methods. Payment is typically made at the beginning of each month.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I try a free trial class?</div>
+                <div class="faq-answer">
+                    <p>Absolutely! I offer a free 20-minute trial class so you can experience my teaching style and we can discuss your learning goals. Contact me to schedule your trial!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials-section">
+        <h2 class="section-title">What Our Students Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">Brother Abdul Azeem is an excellent teacher. His patience and teaching methodology helped me improve my Tajweed significantly. Highly recommended!</p>
+                <p class="testimonial-author">- Ahmed K.</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">My children love their Quran classes! The flexible timing and one-on-one attention has made a huge difference in their learning. Alhamdulillah!</p>
+                <p class="testimonial-author">- Fatima S.</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">I started with zero knowledge of Arabic and now I can read Quran fluently. The structured approach and dedication of Ustadh Abdul Azeem is amazing!</p>
+                <p class="testimonial-author">- Muhammad R.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title">Contact Us</h2>
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+92-XXX-XXXXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label for="course">Course Interest *</label>
+                    <select id="course" name="course" required>
+                        <option value="">Select a course</option>
+                        <option value="quran-reading">Quran Reading</option>
+                        <option value="tajweed">Tajweed</option>
+                        <option value="memorization">Quran Memorization</option>
+                        <option value="translation">Quran Translation</option>
+                        <option value="arabic">Arabic Language</option>
+                        <option value="islamic-studies">Islamic Studies</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell us about your learning goals..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/923065015322" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        💬
+    </a>
+
+    <footer class="footer">
+        <p><strong>Online Quran Academy</strong></p>
+        <p>Instructor: Abdul Azeem</p>
+        <p>WhatsApp: +92-306-5015322</p>
+        <p>Email: abdulazeem325566@gmail.com</p>
+        <p>&copy; 2025 Online Quran Academy. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://wa.me/923065015322" target="_blank" title="WhatsApp">📱</a>
+            <a href="mailto:abdulazeem325566@gmail.com" title="Email">✉️</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isActive = this.classList.contains('active');
+                
+                // Close all FAQs
+                document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('active'));
+                
+                // Open clicked FAQ if it wasn't active
+                if (!isActive) {
+                    this.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
